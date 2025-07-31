@@ -1,0 +1,15 @@
+--- a/src/app/resource_finder.cpp	2025-08-01 01:44:04
++++ b/src/app/resource_finder.cpp	2025-08-01 01:45:30
+@@ -99,6 +99,12 @@
+ 
+   std::snprintf(buf, sizeof(buf), "../Resources/data/%s", filename);
+   includeBinDir(buf); // $BINDIR/../Resources/data/filename (inside a bundle)
++
++  // Nix: this may be true for us too if not executing from the bundle
++  // (rn we don't generate one)
++  // $BINDIR/../share/aseprite/data/filename (installed in /usr/ or /usr/local/)
++  std::snprintf(buf, sizeof(buf), "../share/aseprite/data/%s", filename);
++  includeBinDir(buf);
+ 
+ #else
+ 

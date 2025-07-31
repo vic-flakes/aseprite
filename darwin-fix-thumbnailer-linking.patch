@@ -1,0 +1,12 @@
+--- a/src/desktop/osx/CMakeLists.txt	2025-08-01 01:22:09
++++ b/src/desktop/osx/CMakeLists.txt	2025-08-01 01:22:48
+@@ -11,6 +11,9 @@
+   laf-base
+   dio-lib
+   render-lib
++  ${PNG_LIBRARIES}
++  jpeg
++  ${WEBP_LIBRARIES}
+   ${QUARTZ_LIBRARY})
+ 
+ set_target_properties(AsepriteThumbnailer PROPERTIES

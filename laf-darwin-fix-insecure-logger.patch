@@ -1,0 +1,11 @@
+--- src/laf/os/osx/logger.mm	2025-08-01 01:10:15
++++ src/laf/os/osx/logger.mm	2025-08-01 01:10:28
+@@ -14,7 +14,7 @@
+ 
+ void LoggerOSX::logError(const char* error)
+ {
+-  NSLog([NSString stringWithUTF8String:error]);
++  NSLog(@"%@", [NSString stringWithUTF8String:error]);
+ }
+ 
+ } // namespace os
